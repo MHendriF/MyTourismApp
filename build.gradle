@@ -20,6 +20,9 @@ buildscript {
         glide_version = "4.11.0"
 
         room_version = "2.2.6"
+
+        retrofit_version = "2.9.0"
+        logging_interceptor_version = '4.9.0'
     }
     repositories {
         google()
