@@ -3,7 +3,7 @@ package com.hendri.mytourismapp.core.di
 import android.content.Context
 
 import com.hendri.mytourismapp.core.data.source.local.LocalDataSource
-import com.dicoding.tourismapp.core.data.source.local.room.TourismDatabase
+import com.hendri.mytourismapp.core.data.source.local.room.TourismDatabase
 
 import com.hendri.mytourismapp.core.data.TourismRepository
 import com.hendri.mytourismapp.core.data.source.remote.RemoteDataSource

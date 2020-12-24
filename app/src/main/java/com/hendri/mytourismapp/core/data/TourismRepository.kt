@@ -11,6 +11,9 @@ import com.hendri.mytourismapp.core.domain.model.Tourism
 import com.hendri.mytourismapp.core.domain.repository.ITourismRepository
 import com.hendri.mytourismapp.core.utils.AppExecutors
 import com.hendri.mytourismapp.core.utils.DataMapper
+import io.reactivex.Flowable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 class TourismRepository private constructor(
     private val remoteDataSource: RemoteDataSource,
@@ -32,31 +35,30 @@ class TourismRepository private constructor(
             }
     }
 
-    override fun getAllTourism(): LiveData<Resource<List<Tourism>>> =
+    override fun getAllTourism(): Flowable<Resource<List<Tourism>>> =
         object : NetworkBoundResource<List<Tourism>, List<TourismResponse>>(appExecutors) {
-            override fun loadFromDB(): LiveData<List<Tourism>> {
-                return Transformations.map(localDataSource.getAllTourism()) {
-                    DataMapper.mapEntitiesToDomain(it)
-                }
+            override fun loadFromDB(): Flowable<List<Tourism>> {
+                return localDataSource.getAllTourism().map { DataMapper.mapEntitiesToDomain(it) }
             }
 
             override fun shouldFetch(data: List<Tourism>?): Boolean =
                 //data == null || data.isEmpty()
                 true // ganti dengan true jika ingin selalu mengambil data dari internet
 
-            override fun createCall(): LiveData<ApiResponse<List<TourismResponse>>> =
+            override fun createCall(): Flowable<ApiResponse<List<TourismResponse>>> =
                 remoteDataSource.getAllTourism()
 
             override fun saveCallResult(data: List<TourismResponse>) {
                 val tourismList = DataMapper.mapResponsesToEntities(data)
                 localDataSource.insertTourism(tourismList)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe()
             }
-        }.asLiveData()
+        }.asFlowable()
 
-    override fun getFavoriteTourism(): LiveData<List<Tourism>> {
-        return Transformations.map(localDataSource.getFavoriteTourism()) {
-            DataMapper.mapEntitiesToDomain(it)
-        }
+    override fun getFavoriteTourism(): Flowable<List<Tourism>> {
+        return localDataSource.getFavoriteTourism().map { DataMapper.mapEntitiesToDomain(it) }
     }
 
     override fun setFavoriteTourism(tourism: Tourism, state: Boolean) {
