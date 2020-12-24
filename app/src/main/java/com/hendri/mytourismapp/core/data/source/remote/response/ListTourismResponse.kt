@@ -2,7 +2,7 @@ package com.hendri.mytourismapp.core.data.source.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-class ListTourismResponse(
+data class ListTourismResponse(
 
     @field:SerializedName("error")
     val error: Boolean,

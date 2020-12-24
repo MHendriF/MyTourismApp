@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.hendri.mytourismapp.R
-import com.hendri.mytourismapp.core.data.source.local.entity.TourismEntity
 import com.hendri.mytourismapp.core.domain.model.Tourism
 import com.hendri.mytourismapp.databinding.ItemListTourismBinding
 import java.util.ArrayList

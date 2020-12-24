@@ -26,7 +26,7 @@ class RemoteDataSource private constructor(private val apiService: ApiService) {
             try {
                 val response = apiService.getList()
                 val dataArray = response.places
-                if (dataArray.isEmpty()) {
+                if (dataArray.isNotEmpty()) {
                     emit(ApiResponse.Success(response.places))
                 } else {
                     emit(ApiResponse.Empty)
