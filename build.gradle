@@ -23,6 +23,10 @@ buildscript {
 
         retrofit_version = "2.9.0"
         logging_interceptor_version = '4.9.0'
+
+        rxjava_version = "2.2.19"
+        rxandroid_version = "2.1.1"
+        lifecycle_version = "2.2.0"
     }
     repositories {
         google()
