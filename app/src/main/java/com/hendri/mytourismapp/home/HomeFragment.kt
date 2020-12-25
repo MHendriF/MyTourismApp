@@ -1,5 +1,6 @@
 package com.hendri.mytourismapp.home
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -7,21 +8,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.hendri.mytourismapp.MyApplication
 import com.hendri.mytourismapp.R
 import com.hendri.mytourismapp.core.data.Resource
 import com.hendri.mytourismapp.core.ui.TourismAdapter
 import com.hendri.mytourismapp.core.ui.ViewModelFactory
 import com.hendri.mytourismapp.databinding.FragmentHomeBinding
 import com.hendri.mytourismapp.detail.DetailTourismActivity
+import javax.inject.Inject
 
 class HomeFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    @Inject
+    lateinit var factory: ViewModelFactory
+    private val homeViewModel: HomeViewModel by viewModels {
+        factory
+    }
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        (requireActivity().application as MyApplication).appComponent.inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,9 +54,6 @@ class HomeFragment : Fragment() {
                 intent.putExtra(DetailTourismActivity.EXTRA_DATA, selectedData)
                 startActivity(intent)
             }
-
-            val factory = ViewModelFactory.getInstance(requireActivity())
-            homeViewModel = ViewModelProvider(this, factory)[HomeViewModel::class.java]
 
             homeViewModel.tourism.observe(viewLifecycleOwner, { tourism ->
                 if (tourism != null) {
