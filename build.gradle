@@ -28,6 +28,9 @@ buildscript {
         dagger_version = "2.30.1"
         activity_ktx_version = "1.1.0"
         fragment_ktx_version = "1.2.5"
+
+        hilt_version = '2.29-alpha'
+        hilt_jetpack_version = '1.0.0-alpha02'
     }
     repositories {
         google()
@@ -36,6 +39,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:4.1.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
