@@ -1,0 +1,10 @@
+R_DEF: Internal format may change without notice
+local
+id iv_item_image
+id top_space
+id tv_item_subtitle
+id tv_item_title
+layout item_list_tourism
+string image_description
+string text_primary
+string text_subtitle

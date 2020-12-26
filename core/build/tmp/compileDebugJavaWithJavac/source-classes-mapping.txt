@@ -1,0 +1,14 @@
+com/mhendrif/mytourismapp/core/databinding/ItemListTourismBinding.java
+ com.mhendrif.mytourismapp.core.databinding.ItemListTourismBinding
+com/mhendrif/mytourismapp/core/data/source/local/room/TourismDatabase_Impl.java
+ com.mhendrif.mytourismapp.core.data.source.local.room.TourismDatabase_Impl
+ com.mhendrif.mytourismapp.core.data.source.local.room.TourismDatabase_Impl$1
+com/mhendrif/mytourismapp/core/data/source/local/room/TourismDao_Impl.java
+ com.mhendrif.mytourismapp.core.data.source.local.room.TourismDao_Impl
+ com.mhendrif.mytourismapp.core.data.source.local.room.TourismDao_Impl$1
+ com.mhendrif.mytourismapp.core.data.source.local.room.TourismDao_Impl$2
+ com.mhendrif.mytourismapp.core.data.source.local.room.TourismDao_Impl$3
+ com.mhendrif.mytourismapp.core.data.source.local.room.TourismDao_Impl$4
+ com.mhendrif.mytourismapp.core.data.source.local.room.TourismDao_Impl$5
+com/mhendrif/mytourismapp/core/BuildConfig.java
+ com.mhendrif.mytourismapp.core.BuildConfig
