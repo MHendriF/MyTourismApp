@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hendri.mytourismapp">
+    package="com.mhendrif.mytourismapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".MyApplication"
+        android:name="com.mhendrif.mytourismapp.MyApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyTourismApp">
         <activity
-            android:name=".MainActivity"
+            android:name="com.mhendrif.mytourismapp.MainActivity"
             android:theme="@style/Theme.MyTourismApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
         </activity>
 
         <activity
-            android:name=".detail.DetailTourismActivity"
+            android:name="com.mhendrif.mytourismapp.detail.DetailTourismActivity"
             android:label="@string/title_activity_detail_home"
             android:theme="@style/Theme.MyTourismApp.NoActionBar" />
 
