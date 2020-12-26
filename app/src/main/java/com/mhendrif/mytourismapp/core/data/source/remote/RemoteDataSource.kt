@@ -1,5 +1,6 @@
 package com.mhendrif.mytourismapp.core.data.source.remote
 
+import android.annotation.SuppressLint
 import android.util.Log
 import com.mhendrif.mytourismapp.core.data.source.remote.network.ApiResponse
 import com.mhendrif.mytourismapp.core.data.source.remote.network.ApiService
@@ -21,6 +22,7 @@ class RemoteDataSource private constructor(private val apiService: ApiService) {
             }
     }
 
+    @SuppressLint("CheckResult")
     fun getAllTourism(): Flowable<ApiResponse<List<TourismResponse>>> {
         val resultData = PublishSubject.create<ApiResponse<List<TourismResponse>>>()
 
