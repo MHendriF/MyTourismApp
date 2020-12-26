@@ -1,3 +1,4 @@
+include ':maps'
 include ':core'
 include ':app'
 rootProject.name = "MyTourismApp"

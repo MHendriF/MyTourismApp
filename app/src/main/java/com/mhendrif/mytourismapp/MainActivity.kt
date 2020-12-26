@@ -1,5 +1,7 @@
 package com.mhendrif.mytourismapp
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -56,7 +58,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 title = getString(R.string.menu_favorite)
             }
             R.id.nav_map -> {
-                Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show()
+                val uri = Uri.parse("mytourismapp://maps")
+                startActivity(Intent(Intent.ACTION_VIEW, uri))
+                //Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show()
             }
         }
         if (fragment != null) {
