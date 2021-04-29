@@ -14,16 +14,27 @@ android {
         applicationId "com.mhendrif.mytourismapp"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'mytourismapp'
+            keyPassword 'zxcasd123'
+            storeFile file('D:/Android/KeyStore/mytourismapp.jks')
+            storePassword 'zxcasd123'
+            v2SigningEnabled false
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
         debug {
             minifyEnabled true
