@@ -1,15 +1,15 @@
 package com.mhendrif.mytourismapp.detail
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
+import com.mhendrif.mytourismapp.BaseSplitActivity
 import com.mhendrif.mytourismapp.R
 import com.mhendrif.mytourismapp.core.domain.model.Tourism
 import com.mhendrif.mytourismapp.databinding.ActivityDetailTourismBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class DetailTourismActivity : AppCompatActivity() {
+class DetailTourismActivity : BaseSplitActivity() {
 
     companion object {
         const val EXTRA_DATA = "extra_data"

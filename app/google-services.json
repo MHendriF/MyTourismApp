@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "408212657424",
+    "project_id": "tourism-map-fe01d",
+    "storage_bucket": "tourism-map-fe01d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408212657424:android:eda82f2deaed293f614195",
+        "android_client_info": {
+          "package_name": "com.mhendrif.mytourismapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408212657424-hafgdls9978l9jveq5nbb1fnn9aoe61r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHXNtjSLirSqf2Q_Fzz0x62SSRWNaUV7Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "408212657424-hafgdls9978l9jveq5nbb1fnn9aoe61r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

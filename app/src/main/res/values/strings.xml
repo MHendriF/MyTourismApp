@@ -15,4 +15,14 @@
     <string name="no_data">Empty data</string>
     <string name="something_wrong">Oops.. something went wrong</string>
     <string name="title_maps">Maps</string>
+
+
+    <string name="loading">Loading</string>
+    <string name="user_cancelled">The user cancelled module installation</string>
+    <string name="loading_module">Loading module %1$s</string>
+    <string name="already_installed">Already installed</string>
+    <string name="starting_install_for">Starting install for %1$s</string>
+    <string name="downloading">Downloading %1$s</string>
+    <string name="installing">Installing %1$s</string>
+    <string name="error_for_module">Error: %1$i for module %2$s</string>
 </resources>

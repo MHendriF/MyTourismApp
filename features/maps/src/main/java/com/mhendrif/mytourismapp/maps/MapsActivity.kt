@@ -4,7 +4,6 @@ import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import com.mhendrif.mytourismapp.core.data.Resource
 import com.mhendrif.mytourismapp.core.domain.model.Tourism
 import com.mhendrif.mytourismapp.detail.DetailTourismActivity
@@ -19,12 +18,11 @@ import com.mapbox.mapboxsdk.maps.MapboxMap
 import com.mapbox.mapboxsdk.maps.Style
 import com.mapbox.mapboxsdk.plugins.annotation.SymbolManager
 import com.mapbox.mapboxsdk.plugins.annotation.SymbolOptions
+import com.mhendrif.mytourismapp.BaseSplitActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 
-
-
-class MapsActivity : AppCompatActivity() {
+class MapsActivity : BaseSplitActivity() {
 
     companion object {
         private const val ICON_ID = "ICON_ID"
@@ -105,6 +103,7 @@ class MapsActivity : AppCompatActivity() {
         super.onStart()
         binding.mapView.onStart()
     }
+
     override fun onResume() {
         super.onResume()
         binding.mapView.onResume()
@@ -114,18 +113,22 @@ class MapsActivity : AppCompatActivity() {
         super.onPause()
         binding.mapView.onPause()
     }
+
     override fun onStop() {
         super.onStop()
         binding.mapView.onStop()
     }
+
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         binding.mapView.onSaveInstanceState(outState)
     }
+
     override fun onDestroy() {
         super.onDestroy()
         binding.mapView.onDestroy()
     }
+
     override fun onLowMemory() {
         super.onLowMemory()
         binding.mapView.onLowMemory()

@@ -9,7 +9,6 @@
         <dist:delivery>
             <dist:on-demand />
         </dist:delivery>
-
         <dist:fusing dist:include="true" />
     </dist:module>
 
